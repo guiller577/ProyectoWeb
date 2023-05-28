@@ -107,6 +107,11 @@ img {
     border: none;
     margin-bottom: 0;
 }
+
+.tipocafe {
+    text-align: justify;
+}
+
 .boton {
     display: block;
     font-family: var(--fuenteHeading);
@@ -158,6 +163,7 @@ img {
     background-color: var(--negro);
     padding-bottom: 3rem;
     margin-top: 4rem;
+    font-size: 1rem;
 }
 
 .curso {
@@ -208,6 +214,17 @@ img {
 }
 .campo__field--textarea {
     height: 20rem;
+}
+
+#titulo1{
+    border: 0.5rem;
+    text-align: center;
+}
+
+.mapa{
+    display: flex;
+    align-items: center;
+    flex-flow: column;
 }
 
 /* responsive */
