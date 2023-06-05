@@ -66,7 +66,7 @@ img {
     background-image: url(../img/banner.png);
 }
 .header {
-    height: 60rem;
+    height: 30rem;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -89,7 +89,7 @@ img {
     font-weight: 400;
 }
 .logo__bold {
-    font-weight: 700;
+    font-weight: 500;
 }
 
 .navegacion__enlace {
@@ -131,8 +131,19 @@ img {
 .boton--primario {
     background-color: var(--negro);
 }
+
+.boton--primario:hover{
+    background: rgba(0, 195, 255, 0.63);
+    transform: scale(0.5);
+}
+
 .boton--secundario {
     background-color: var(--primario);
+}
+
+.boton--secundario:hover{
+    background: rgba(0, 183, 255, 0.493);
+    transform: scale(0.5);
 }
 
 .cursos {
@@ -199,19 +210,23 @@ img {
     width: 95%;
     padding: 5rem;
 }
+
 .campo {
     display: flex;
     margin-bottom: 2rem;
 }
+
 .campo__label {
     flex: 0 0 9rem;
     text-align: right;
     padding-right: 2rem;
 }
+
 .campo__field {
     flex: 1;
     border: 1px solid var(--gris);
 }
+
 .campo__field--textarea {
     height: 20rem;
 }
@@ -228,7 +243,7 @@ img {
 }
 
 /* responsive */
-
+/*para 768px*/
 @media (min-width: 768px) {
     .header__texto {
         margin-top: 15rem;

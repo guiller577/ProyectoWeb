@@ -43,23 +43,75 @@
 
         <div class="contacto-bg"></div>
 
-        <form class="formulario" method="post" target="_self" name="informacion">
+        <form action="#" method="get" class="formulario" id="formulario" >
             <div class="campo">
                 <label class="campo__label" for="nombre">Nombre</label>
-                <input class="campo__field" type="text" placeholder="Tu Nombre" id="nombre" required>
+                <input class="campo__field" type="text" placeholder="Tu Nombre" id="minombre">
             </div>
             <div class="campo">
                 <label class="campo__label" for="email">E-mail</label>
-                <input class="campo__field" type="email" placeholder="Tu E-mail" id="email" required>
+                <input class="campo__field" type="email" placeholder="Tu E-mail" id="miemail">
             </div>
             <div class="campo">
                 <label class="campo__label" for="mensaje">Mensaje</label>
-                <textarea class="campo__field campo__field--textarea" id="mensaje" required></textarea>
+                <textarea class="campo__field campo__field--textarea" id="mimensaje" placeholder="Ingrese su mensaje aquí"></textarea>
             </div>
             <div class="campo">
-                <input type="submit" value="Enviar" class="boton boton--primario" onclick="enviar()">
+                <input type="submit" value="Enviar" id="boton" class="boton boton--primario">
             </div>
         </form>
+
+        <script>
+            var nombre,email,mensaje,boton,retorno;
+
+            nombre = document.getElementById("minombre");
+            email = document.getElementById("miemail");
+            mensaje = document.getElementById("mimensaje");
+            
+            boton = document.getElementById("boton");
+
+
+            boton.addEventListener("click", function(){
+                if(validar()){
+                    document.getElementById("formulario").submit();
+                    alert("El mensaje ha sido enviado con éxito");
+                    document.getElementById("formulario").reset();
+                }else{
+                    document.getElementById("minombre").focus();
+                    alert("Formulario vacío");
+                    
+                }
+            });
+
+            function validar(){
+                retorno = true;
+
+                nombre.style.borderColor = "";
+                email.style.borderColor = "";
+                mensaje.style.borderColor = "";
+
+                if(nombre.value.trim() == ""){
+                    console.log("Campo nombre vacio");
+                    nombre.style.borderColor = "red";
+                    retorno = false;
+                }
+                if(email.value.trim() == ""){
+                    console.log("Campo e-mail vacio");
+                    email.style.borderColor = "red";
+                    retorno = false;
+                }
+                if(mensaje.value.trim() == ""){
+                    console.log("Campo mensaje vacio");
+                    mensaje.style.borderColor = "red";
+                    retorno = false;
+                }
+                
+                console.log("retorno : " + retorno)
+                return retorno;
+            }
+            
+        </script>
+
         <h3 id="titulo1"><strong>Nos encontramos aquí</strong></h3>
         <div class="mapa">
             <br>
